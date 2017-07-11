@@ -71,3 +71,13 @@ config OPENVSWITCH_GENEVE
 	  If you say Y here, then the Open vSwitch will be able create geneve vport.
 
 	  Say N to exclude this support and reduce the binary size.
+
+config OPENVSWITCH_GTP
+	tristate "Open vSwitch GTP tunneling support"
+	depends on OPENVSWITCH
+	depends on GTP
+	default OPENVSWITCH
+	---help---
+	  If you say Y here, then the Open vSwitch will be able create gtp vport.
+
+	  Say N to exclude this support and reduce the binary size.

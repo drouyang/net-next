@@ -31,4 +31,12 @@ struct gtp1_header {	/* According to 3GPP TS 29.060. */
 #define GTP1_F_EXTHDR	0x04
 #define GTP1_F_MASK	0x07
 
+#ifdef CONFIG_INET
+
+struct net_device *gtp_create_flow_based_dev(
+			struct net *net, const char *name,
+		     	u8 name_assign_type, u16 dst_port);
+
+#endif /*ifdef CONFIG_INET */
+
 #endif
